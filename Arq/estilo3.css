@@ -12,10 +12,11 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 .container{
-    height: 552px;
+    height: 600px;
     width: 90%;
-    position: relative;
+    position: absolute;
     box-shadow:  0 0 10px rgb(255, 255, 255);
 }
 .container::before{
@@ -65,12 +66,7 @@ body{
     font-family: sans-serif;
     font-size: .7em;
 }
-.menu .logo{
-    color: #f0c11e;
-    font-weight: bold;
-    font-size: 1.2em;
-    border-bottom-color: #f0c11e;
-}
+
 .box-info{
     width: 95%;
     margin: 0 auto;
@@ -140,19 +136,7 @@ footer{
         text-align: left;  
 }
     
-colum1{
-        margin-top: 10%;
-        max-width: 500px;
-        margin-left:auto;
-        margin-right: auto;
-}
-    
-colum2{
-        margin-top: 20%;
-        max-width: 500px;
-        margin-left:auto;
-        margin-right: auto;
-}
+
     
 .row img{
         width: 40px;
@@ -175,28 +159,43 @@ a {
     flex-wrap: wrap;
 }
 
+.Contenedor2{
+    color: brown;
+    font-size: 20px;
+    font-family: Jokerman;
+    margin: 0 auto;
+    width: 970px;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+.Contenedor3{
+    color: brown;
+    font-size: 20px;
+    font-family: Jokerman;
+    margin: 0 auto;
+    width: 970px;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+
+
 .Columna{
     color: rgb(255, 255, 255);
     font-size: 20px;
     font-family: Jokerman;
     background: rgb(0, 0, 0);
     border: 10px solid rgb(255, 255, 255);
-    margin: 10px;
+    margin: 2px;
     padding: 10px;
     border-radius: 6px;
     box-shadow: 10px 10px 4px rgb(189, 178, 178);
     width: 100%;
     box-sizing: border-box;
 }
-
-
-
-
-
-
-
-
-
-
 
 

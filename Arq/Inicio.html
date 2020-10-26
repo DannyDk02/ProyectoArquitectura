@@ -28,26 +28,59 @@
         </nav>
 
         <div class="box-info">
-            <form class="formulario">
-                 <div class="contenedor">
-                 
-                 
-                     
-                     <div class="input-contenedor">
-                     <i class="fas fa-envelope icon"></i>
-                     <input type="text" placeholder="Correo Electronico">
-                     
-                     </div>
-                     
-                     <div class="input-contenedor">
-                    <i class="fas fa-key icon"></i>
-                     <input type="password" placeholder="Contraseña">
-                     
-                     </div>
-                     <input type="submit" value="Login" class="button">
-                     <p>¿No tienes una cuenta? <a class="link" href="registrarvista.html">Registrate </a></p>
-                 </div>
-                </form>
+                <section class="Contenedor">
+                    <div class="Columna">
+                        <p>
+                            Ingresar
+                        </p>
+                
+                        <div id="hh">
+
+                            <div>
+                                Ingrese su nombre:
+                                <input id="NOMBRE" type="text" />
+                            </div>
+                            
+                            <div>
+                                Ingrese su apellido:
+                                <input id="APELLIDO" type="text" />
+                            </div>
+                            <div>
+                                Ingrese su correo:
+                                <input id="CORREO" type="text" />
+                            </div>
+                            
+                        
+                            <div>
+                                <button onclick="validar()"> INGRESAR</button>
+                            </div>
+                        </div>
+                        
+                        <script>
+                            function validar() {
+                                a = document.getElementById("NOMBRE");
+                                b = document.getElementById("APELLIDO");
+                                c = document.getElementById("CORREO");
+                                ca=a.value;
+                                cb=b.value;
+                                co = c.value;
+                        
+                                var t = co.split('');
+                                var c = 0;
+                                for (var i = 0; i < t.length; i++) {
+                                    if (t[i] == '@') {
+                                        c = c + 1;
+                                    }
+                                }
+                                if (c == 1) {
+                                    alert('Bienvenido: '+ ca+' '+cb+' '+'Su correo es valido ');
+                                }else{
+                                    alert('Bienvenido: ' + ca+' '+cb+' '+'Su correo es invalido ');
+                                }
+                            } 
+                        </script>
+                    </div>
+                </section>
 
         </div>
     </div>
