@@ -28,10 +28,35 @@
         </nav>
         
         <div class="box-info"><!--Div en el que se van a mostrar los pedidos-->
-
-
-
+            <section class="Contenedor"> <!--Recuadro en el que se va a encontrar la tabla del menu-->
+                <div class="Columna"> <!--Division entre cada apartado del formulario de ingreso-->
+                    <p> <!--Parrafo en el que se encuentra el titulo-->
+                        Inicio Orden
+                    </p>
             
+                    <form role="form" class="form-contact" action="Home.html" method="POST"> <!--Formulario -->
+                        <div class="row">
+                            <div class="col-md-6"> <!--Division entre cada apartado del formulario de ingreso-->
+                                <input type="text" class="form-control" placeholder="Escriba su nombre *" required="required" name="name">
+                                <input type="email" class="form-control" placeholder="Escriba su correo *" required="required" name="email">
+                            </div>
+        
+                            <div class="col-md-6"> <!--Division entre cada apartado del formulario de ingreso-->
+                                <input type="date" name="fecha" id="fecha">
+                                <input type="tel" class="form-control" placeholder="Telefono *" name="phone">
+                            </div>
+                        </div>
+        
+                        <div class="row"> <!--Division entre cada apartado del formulario de ingreso-->
+                            <div class="col-md-12">
+                                <textarea required="required" placeholder="Ingrese su mensaje *" name="message"></textarea>
+                                <br><button onclick="alert('Sugerencia enviada, Muchas gracias por su apoyo!')" >Enviar</a> </button>
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </section>
         </div>
     </div>
 
