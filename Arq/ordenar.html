@@ -38,6 +38,8 @@
                         <div class="row">
                             <div class="col-md-6"> <!--Division entre cada apartado del formulario de ingreso-->
                                 <input type="text" class="form-control" placeholder="Escriba su nombre *" required="required" name="name">
+                                <input type="text" class="form-control" placeholder="Escriba su apellido *" required="required" name="apellido"></br>
+                                <input type="text" class="form-control" placeholder="Ingrese su direccion *" required="required" name="direccion">
                                 <input type="email" class="form-control" placeholder="Escriba su correo *" required="required" name="email">
                             </div>
         
@@ -49,9 +51,19 @@
         
                         <div class="row"> <!--Division entre cada apartado del formulario de ingreso-->
                             <div class="col-md-12">
-                                <textarea required="required" placeholder="Ingrese su mensaje *" name="message"></textarea>
-                                <br><button onclick="alert('Sugerencia enviada, Muchas gracias por su apoyo!')" >Enviar</a> </button>
-                            </div>
+                                <p>Menu:
+                                    Hamburguesa
+                                    <input type="text" class="form-control" required="required" name="Cantidad"  size="1">
+                                    Perras
+                                    <input type="text" class="form-control" required="required" name="Cantidad2"  size="1">
+                                    Salchipápas
+                                    <input type="text" class="form-control" required="required" name="Cantidad3"  size="1">
+                                    Lasagna
+                                    <input type="text" class="form-control" required="required" name="Cantidad4"  size="1">
+                                </p>
+                                <br><button onclick="alert('Su orden ha sido creada, Muchas gracias por escogernos!')" >Enviar</a> </button>
+                                <input type="reset" value="Borrar">
+                            </div> 
                         </div>
                         
                     </form>
