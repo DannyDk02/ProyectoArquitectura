@@ -35,8 +35,9 @@
                     <p> <!--Parrafo en el que se encuentra el titulo-->
                         Inicio para ordenar
                     </p>
-            
-                    <form  role="form" class="form-contact" action="cgi-bin/orden.py" method="POST"> <!--Formulario  action="Home.html"-->
+                <form action="cgi-bin/registro.py" method="POST">
+
+                    <form  role="form" class="form-contact" action="Home.html" method="POST"> <!--Formulario  action="Home.html"-->
                         <div class="row">
                             <div class="col-md-6"> <!--Division entre cada apartado del formulario de ingreso-->
                                 <input type="text" class="form-control" placeholder="Escriba su nombre *" required="required" name="name">
@@ -64,12 +65,12 @@
                                     <input type="text" class="form-control" required="required" name="Cantidad4"  size="1">
                                 </p>
                                 <!--<br><button onclick="alert('Su orden ha sido creada, Muchas gracias por escogernos!')" >Enviar</a> </button>-->
-                                <input type="submit" value="Aceptar" />
+                                <input type="submit" value="Aceptar">
                                 <input type="reset" value="Borrar">
                             </div> 
-                        </div>
-                        
+                        </div>  
                     </form>
+                </form>
                 </div>
             </section>
         </div>
