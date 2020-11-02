@@ -28,7 +28,7 @@
             </ul>
         </nav>
         
-        <form action="orden.py" method="POST">
+        <form action="cgi-bin/orden.py" method="POST">
             <div class="box-info"><!--Div en el que se van a mostrar los pedidos-->
            
                 <section class="Contenedor"> <!--Recuadro en el que se va a encontrar la tabla del menu-->
@@ -38,7 +38,7 @@
                         </p>
                     
     
-                        <form  role="form" class="form-contact" action="Home.html" method="POST"> <!--Formulario  action="Home.html"-->
+                        <form  role="form" class="form-contact" action="cgi-bin/orden.py" method="POST"> <!--Formulario  action="Home.html"-->
                             <div class="row">
                                 <div class="col-md-6"> <!--Division entre cada apartado del formulario de ingreso-->
                                     <input type="text" class="form-control" placeholder="Escriba su nombre *" required="required" name="name">
@@ -65,8 +65,8 @@
                                         Lasagna
                                         <input type="text" class="form-control" required="required" name="Cantidad4"  size="1">
                                     </p>
-                                    <br><button onclick="alert('Su orden ha sido creada, Muchas gracias por escogernos!')" >Enviar</a> </button>
-                                    <!--<input type="submit" value="Aceptar">-->
+                                    <!--<br><button onclick="alert('Su orden ha sido creada, Muchas gracias por escogernos!')" >Enviar</a> </button>-->
+                                    <input type="submit" value="Aceptar">
                                     <input type="reset" value="Borrar">
                                 </div> 
                             </div>  
