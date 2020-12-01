@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %} Nuevo pedido {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <label for="description">Descripcion</label>
+        <!-- <input name="description" id="description" placeholder="Descripcion..." required /> -->
+        <select name="description" id="description">
+            <option value="Hamburguesa">Hamburguesa</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Perro Caliente">Perro calliente</option>
+            <option value="Salchipapa">Salchipapa</option>
+        </select>
+        <label for="amount">Cantidad</label>
+        <input name="amount" id="amount" placeholder="Cantidad..." required />
+        <input type="submit" value="Guardar" />
+    </form>
+{% endblock %}
