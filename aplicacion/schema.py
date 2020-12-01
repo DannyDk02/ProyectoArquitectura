@@ -21,6 +21,7 @@ instructions = [
             description TEXT NOT NULL,
             amount INT NOT NULL,
             delivered BOOLEAN NOT NULL,
+            pay_method TEXT,
             FOREIGN KEY (ordered_by) REFERENCES Usuario (id)
         );
     """

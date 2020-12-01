@@ -7,7 +7,6 @@
 {% block content %}
     <form method="POST">
         <label for="description">Descripcion</label>
-        <!-- <input name="description" id="description" value="{{request.form['description'] or pedido['description']}}" required /> -->
         <select name="description" id="description">
             <option value="Hamburguesa">Hamburguesa</option>
             <option value="Pizza">Pizza</option>
@@ -16,8 +15,6 @@
         </select>
         <label for="amount">Cantidad</label>
         <input name="amount" id="amount" value="{{request.form['amount'] or pedido['amount']}}" required />
-        <label for="delivered">Entregado</label>
-        <input type="checkbox" name="delivered" id="delivered" {% if pedido['delivered'] == 1 %}checked{% endif %} />
         <input type="submit" value="Guardar" />
     </form>
     <form action="{{ url_for('aplicacion.delete',id=pedido['id']) }}" method="POST">

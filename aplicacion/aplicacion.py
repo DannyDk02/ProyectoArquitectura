@@ -51,16 +51,15 @@ def update(id):
     if request.method == 'POST':
         description = request.form['description']
         amount = request.form['amount']
-        delivered = True if request.form.get('delivered') == 'on' else False
         error = None
 
-        if not description:
-            error = 'La descripción es requerida'
+        if not amount:
+            error = 'La cantidad es requerida'
         if error is not None:
             flash(error)
         else:
             db, c = get_db()
-            c.execute('update Pedido set description = %s, amount = %s, delivered = %s where id = %s and ordered_by = %s', (description, amount, delivered,id, g.user['id']))
+            c.execute('update Pedido set description = %s, amount = %s where id = %s and ordered_by = %s', (description, amount,id, g.user['id']))
             db.commit()
             return redirect(url_for('aplicacion.index'))
     return render_template('aplicacion/update.html',pedido=pedido)
@@ -72,3 +71,23 @@ def delete(id):
     c.execute('delete from Pedido where id = %s and ordered_by = %s',(id,g.user['id']))
     db.commit()
     return redirect(url_for('aplicacion.index'))
+
+@bp.route('/<int:id>/pay',methods=['GET','POST'])
+@login_require
+def pay(id):
+    pedido = get_pedido(id)
+    if request.method == 'POST':
+        pay_method = request.form['pay_method']
+        delivered = True if request.form.get('delivered') == 'on' else False
+        error = None
+
+        if not pay_method:
+            error = 'Metodo de pago requerido'
+        if error is not None:
+            flash(error)
+        else:
+            db, c = get_db()
+            c.execute('update Pedido set pay_method = %s, delivered = %s where id = %s and ordered_by = %s', (pay_method, delivered,id, g.user['id']))
+            db.commit()
+            return redirect(url_for('aplicacion.index'))
+    return render_template('aplicacion/pay.html',pedido=pedido)
