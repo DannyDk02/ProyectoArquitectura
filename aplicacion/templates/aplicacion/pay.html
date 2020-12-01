@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block content %}
+<div class="formulario">
     <form method="POST">
         <label for="pay_method">Metodo de pago</label>
-        <select name="pay_method" id="pay_method">
+        <select class="select" name="pay_method" id="pay_method">
             <option value="Efectivo">Efectivo</option>
             <option value="Tarjeta">Tarjeta</option>
         </select>
@@ -18,4 +19,5 @@
     <form action="{{ url_for('aplicacion.delete',id=pedido['id']) }}" method="POST">
         <input class="danger" type="submit" value="Eliminar" onclick="return confirm('estas seguro de querer eliminarlo?')" />
     </form>
+</div>
 {% endblock %}

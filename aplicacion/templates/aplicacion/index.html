@@ -2,33 +2,43 @@
 
 {% block header %}
 <h1>{% block title %} Pedidos {% endblock %}</h1>
+<div class="box">
     {% if g.user %}
         <a class="action" href="{{ url_for('aplicacion.create') }}">Nuevo</a>
-    {% endif %}    
+    {% endif %}   
+</div> 
 {% endblock %}
 
 {% block content %}
 <ul>
-    {% for pedido in pedidos %}
-    <li class="pedido">
-        <div>
-            <h1>
-                {% if pedido['delivered'] == 1%}
-                <strike>{{ pedido['description']}}</strike>
-                <strike>{{ pedido['amount'] }}</strike>
-                {%else%}
-                {{ pedido['description'] }}
-                {{ pedido['amount'] }}
-                {%endif%}
-            </h1>
-            <div class="about">{{ pedido['created_at'].strftime('%Y-%m-%d') }}</div>
-            <a class="action" href="{{ url_for('aplicacion.update', id=pedido['id']) }}">Editar</a>
-            <a class="action" href="{{ url_for('aplicacion.pay', id=pedido['id']) }}">Pagar</a>
-        </div>
-    </li>
-    {% if not loop.last %}
-        <hr>
-    {% endif %}
-    {% endfor %}
+    <div class="box">
+        {% for pedido in pedidos %}
+        <li class="pedido">
+            <div>
+                <h2>
+                    {% if pedido['delivered'] == 1%}
+                    <strike>Orden: {{ pedido['description']}}</strike>
+                    {%else%}
+                    Orden: {{ pedido['description'] }}
+                    {%endif%}
+                </h2>
+                <h2>
+                    {% if pedido['delivered'] == 1%}
+                    <strike>Cantidad: {{ pedido['amount'] }}</strike>
+                    {%else%}
+                    Cantidad: {{ pedido['amount'] }}
+                    {%endif%}
+                </h2>
+
+                <div class="about">{{ pedido['created_at'].strftime('%H:%M %Y-%m-%d') }}</div>
+                <a class="action" href="{{ url_for('aplicacion.update', id=pedido['id']) }}">Editar</a>
+                <a class="action" href="{{ url_for('aplicacion.pay', id=pedido['id']) }}">Pagar</a>
+            </div>
+        </li>
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+        {% endfor %}
+    </div>
 </ul>
 {% endblock %}

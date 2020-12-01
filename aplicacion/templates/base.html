@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <title>{% block title%}{% endblock %} - La perrada</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
-<nav>
-    <h1>La perrada</h1>
+
+<body>
+    <div>
+        <img src="../static/img/logo.png" width="300px" height="300px">
+    </div>
+    
     <ul>
-        {% if g.user %}
+        <div class="box">
+            {% if g.user %}
             <li><span>{{ g.user['username'] }}</span></li>
             <li><a href="{{ url_for('auth.logout') }}">Cerrar Sesion</a></li>
-        {% else %}
+            {% else %}
             <li><a href="{{ url_for('auth.register') }}">Registrarse</a></li>
             <li><a href="{{ url_for('auth.login') }}">Iniciar Sesion</a></li>
-        {% endif %}
-        
+            {% endif %}
+        </div>
     </ul>
-</nav>
-<section class="content">
-    <header>
-        {% block header %}{% endblock %}
-    </header>
-    {% for message in get_flashed_messages() %}
-    <div class="flash">{{ message }}</div>
-    {% endfor %}
-    {% block content %}{% endblock %}
-</section>
+    <section class="content">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        {% for message in get_flashed_messages() %}
+        <div class="flash"><h3>{{ message }}</h3></div>
+        {% endfor %}
+        {% block content %}{% endblock %}
+    </section>
+</body>
