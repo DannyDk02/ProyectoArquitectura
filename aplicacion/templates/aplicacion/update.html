@@ -1,0 +1,31 @@
+<!--
+Pagina en la cual se presenta el formulario para actualizar el pedido realizado, esta enviara los datos para actualizar 
+la informacion en la base de datos. Asi mismo presenta la posibilidad de eliminar el pedido.
+-->
+
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %} Editar {{ pedido['description'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="formulario">
+    <form method="POST">
+        <label for="description">Descripcion</label>
+        <select class="select" name="description" id="description">
+            <option value="Hamburguesa">Hamburguesa</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Perro Caliente">Perro calliente</option>
+            <option value="Salchipapa">Salchipapa</option>
+        </select>
+        <label for="amount">Cantidad</label>
+        <input type="number" min="1" name="amount" id="amount" value="{{request.form['amount'] or pedido['amount']}}" required />
+        <input type="submit" value="Guardar" />
+    </form>
+    <form action="{{ url_for('aplicacion.delete',id=pedido['id']) }}" method="POST">
+        <input class="danger" type="submit" value="Eliminar" onclick="return confirm('estas seguro de querer eliminarlo?')" />
+    </form>
+    <a class="action" href="{{ url_for('aplicacion.index') }}">Volver</a>
+</div>
+{% endblock %}
