@@ -1,3 +1,17 @@
+'''
+Script en el cual se realizan las acciones de la aplicación una vez haber iniciado sesion en la misma. Para esto se hizo uso de las 
+siguientes funciones:
+1. index(): Pagina principal en la cual se apreciaran los pedidos realizados por el usuario en caso de que los tenga junto con las opciones
+de accion para lo mismo.
+2. create(): Pagina en la cual se podra crear una orden en caso de desearlo o regresar al index.
+3. get_pedido(): Revisa la informacion que se presente en el pedido tomando la información desde la base de datos.
+4. update(): Pagina en la cual se podra modificar el pedido en caso de asi desearlo actualizando la información en la base de datos.
+5. delete(): accion de ruta la cual se encargara de eliminar el pedido realizado por el usuario tanto de la aplicacion como de la base de 
+datos.
+6. pay(): pagina en la cual se podra confirmar el pedido realizado y seleccionar el metodo de pago para el mismo agregando esta ultima
+información a la base de datos.
+'''
+
 from flask import (Blueprint, flash, g, render_template, request, url_for, redirect)
 from werkzeug.exceptions import abort
 from aplicacion.auth import login_require

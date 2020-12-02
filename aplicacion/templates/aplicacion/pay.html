@@ -1,3 +1,8 @@
+<!--
+Pagina en la cual se presenta el formulario para actualizar los datos de metodo de pago y confirmacion del pedido, esta enviara los datos 
+para verificar actualizar esto en la base de datos. Asi mismo presenta la posibilidad de eliminar el pedido.
+-->
+
 {% extends 'base.html' %}
 
 {% block header %}
@@ -19,5 +24,6 @@
     <form action="{{ url_for('aplicacion.delete',id=pedido['id']) }}" method="POST">
         <input class="danger" type="submit" value="Eliminar" onclick="return confirm('estas seguro de querer eliminarlo?')" />
     </form>
+    <a class="action" href="{{ url_for('aplicacion.index') }}">Volver</a>
 </div>
 {% endblock %}

@@ -1,3 +1,8 @@
+/*
+Script con estilos con la cual se personalizo las paginas de la aplicación, sobre todo destaca el uso de etiquetas principales y clases mas
+especificas para conservar patrones de diseño.
+*/
+
 body{
     background-image: url(img/2.jpeg);
     background-size: cover;

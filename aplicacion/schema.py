@@ -1,3 +1,9 @@
+'''
+Script con lista de instrucciones denominda 'instructions' con la cual se genera la base de datos MYSQL en donde primar para este programa 
+la tabla usuario y pedido. Las lineas previas a la creación de tablas se aseguran de que no existan previamente borrando adecuadamente las
+llaves foraneas y las tablas en si.
+'''
+
 instructions = [
     'SET FOREIGN_KEY_CHECKS=0;',
     'DROP TABLE IF EXISTS Usuario;',

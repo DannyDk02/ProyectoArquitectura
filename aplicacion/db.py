@@ -1,3 +1,12 @@
+'''
+Script que recibe las variables de entorno asignadas en el __init__.py en el cual se desarrollan las siguientes funciones:
+1. get_db(): se conecta con la base de datos y genera variables para trabajar con la misma.
+2. close_db(): termina la conexión con la base de datos tras realizar una acción con la misma esto con el animo de buenas practicas.
+3. init_db(): iniicaliza la base de datos y la posibilidad de extraer datos de la misma.
+4. init_db_command(): Confirma la accion de conectarse con la base de datos por medio de la linea de comandos en el terminal.
+5. init__app(): asegura el contexto de la aplicación para trabajar con la misma.
+'''
+
 import mysql.connector
 import click
 from flask import current_app, g  

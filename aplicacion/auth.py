@@ -1,3 +1,14 @@
+'''
+Script en el cual se realizan las acciones tipo API_REST para realizar acciones entre la aplicacion y la base de datos. Para esto se 
+desarrollan las siguientes funciones:
+1. register(): Genera la ruta de registro y analiza los datos enviados por el usuario con el fin de agregar al mismo a la base de datos.
+2. login(): Genera la ruta de ingreso de sesion y analiza los datos enviados por el usuario con el fin de ingresar al aplicativo, esto gracias a
+verificar su existencia en la base de datos.
+3. load_logged_in_user(): Se asegura de cargar los datos del usuario el cual este ingresado en la sesión
+4. loggin_require(): se asegura de realizar las acciones dentro de la aplicación simepre y cuando el usuario este loggeado en su cuenta.
+5. logout(): Genera la ruta de cerrar sesion devolviendolo a la ruta principal de iniciar sesion.
+'''
+
 import functools
 from flask import (Blueprint, flash, g, render_template, request, url_for, session, redirect)
 from werkzeug.security import check_password_hash, generate_password_hash

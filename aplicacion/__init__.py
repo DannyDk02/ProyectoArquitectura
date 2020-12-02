@@ -1,3 +1,9 @@
+'''
+Script con el cual se realiza la asignación de valores para las variables de entorno con las cuales se conecta a la base de datos MYSQL
+y se generan los blueprints adecuados para para generar las rutas a la hora de el desarrollo de procesos. Un hola mundo para saber de
+vengo y hacia donde voy.
+'''
+
 import os
 from flask import Flask
 
